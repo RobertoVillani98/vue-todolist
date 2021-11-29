@@ -7,16 +7,20 @@
 
 .container {
  height: 100vh;
- background-image: url(https://upload.wikimedia.org/wikipedia/it/1/10/Drive_to_Survive.png);
+ background-image: url(https://i.eurosport.com/2021/09/12/3217459-65904448-2560-1440.jpg);
+
  background-size: cover;
 }
 
 header {
- text-align: center;
+ text-align: right;
+ margin-right: 50px;
 }
 
 img {
- width: 400px;
+ width: 300px;
+ margin-top: 20px;
+ border-radius: 20px;
 }
 
 main {
@@ -30,6 +34,10 @@ input {
  border-radius: 10px;
  padding: 10px;
  border: none;
+}
+
+.search {
+ margin-right: 40px;
 }
 
 .add-btn {
@@ -56,7 +64,7 @@ input {
  margin-top: 15%;
  padding: 15px;
  border-radius: 20px;
- background: rgba(0, 0, 0, 0.8);
+ background: rgba(0, 0, 0, 0.7);
 }
 .todos-list {
  list-style: none;
@@ -65,11 +73,13 @@ input {
  padding: 8px;
  border-bottom: 1px solid black;
  display: flex;
- color: red;
+ color: rgb(209, 21, 21);
+ font-weight: bold;
 }
 .todos-list li.active span {
- color: green;
+ color: rgb(2, 92, 2);
  text-decoration: line-through;
+ font-weight: bold;
 }
 .todos-list li i {
  margin-left: auto;
