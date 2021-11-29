@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ToDoList</title>
+</head>
+
+<body>
+    <div id="root" class="container">
+        <!-- HEADER -->
+        <header>
+            <img src="http://www.circusf1.com/f14/wp-content/uploads/2017/11/F1_LOGO.jpg" alt="Logo">
+            <div class="search">
+                <input v-model="newTodo" type="text" placeholder="Nuovo Evento" @keyup.enter="addTodo()">
+                <button class="add-btn" @click="addTodo()">AGGIUNGI</button>
+            </div>
+        </header>
+        <!-- /HEADER -->
+
+        <!-- MAIN -->
+        <main>
+            <div class="todos-container">
+                <ul v-if="todos.length > 0" class="todos-list">
+                    <li v-for="(todo, index) in todos" :key="index" :class="{active: todo.done}">
+                        <span>{{todo.name}}</span>
+                        <button class="check-btn" v-if="todo.done == false" @click="todo.done = true">Check</button>
+                        <i class="fas fa-times" @click="removeTodo(index)"></i>
+                    </li>
+                </ul>
+                <h2 v-else>Non ci sono eventi</h2>
+            </div>
+        </main>
+        <!-- /MAIN -->
+    </div>
+
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
